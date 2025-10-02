@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import variaveis from '../../styles/variaveis'
+import { Link } from 'react-router-dom'
 
 export const ContainerHeader = styled.header`
   display: flex;
@@ -7,15 +9,16 @@ export const ContainerHeader = styled.header`
   align-items: center;
 `
 
-export const AddContato = styled.span`
+export const AddContato = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 720px;
+  right: 720px;
   width: 50px;
   height: 50px;
   font-size: 30px;
-  color: #008cffff;
+  color: ${variaveis.azulClaro};
   cursor: pointer;
+  text-decoration: none;
 `

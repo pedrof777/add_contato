@@ -4,7 +4,7 @@ const Cabecalho = () => {
   return (
     <S.ContainerHeader>
       <h1>Contatos</h1>
-      <S.AddContato>+</S.AddContato>
+      <S.AddContato to="/novo">+</S.AddContato>
     </S.ContainerHeader>
   )
 }
