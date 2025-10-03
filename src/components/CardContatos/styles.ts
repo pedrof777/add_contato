@@ -13,9 +13,12 @@ export const ContainerCard = styled.div`
 export const FormContato = styled.form`
   display: flex;
 `
-export const ContatoNome = styled.p`
+export const ContatoNome = styled.input`
   font-size: 1.2em;
   margin-bottom: 5px;
+  background-color: unset;
+  border: none;
+  outline: none;
 `
 export const CardInfo = styled.div`
   font-size: 1em;

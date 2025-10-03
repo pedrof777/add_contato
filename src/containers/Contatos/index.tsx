@@ -15,7 +15,7 @@ const ListaContatos = () => {
                 id={contato.id}
                 nome={contato.nome}
                 email={contato.email}
-                numero={contato.numero}
+                numeroTel={contato.numeroTel}
               />
             </li>
           ))}

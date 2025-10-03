@@ -9,7 +9,7 @@ const CadastroContato = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [nome, setNome] = useState('')
-  const [numero, setNumero] = useState('')
+  const [numeroTel, setNumero] = useState('')
   const [email, setEmail] = useState('')
 
   const adicionarContato = (evento: FormEvent) => {
@@ -18,7 +18,7 @@ const CadastroContato = () => {
       adicionar({
         nome,
         email,
-        numero
+        numeroTel
       })
     )
     navigate('/')
@@ -43,7 +43,7 @@ const CadastroContato = () => {
             <label htmlFor="numero">Numero:</label>
             <S.Campo
               maxLength={11}
-              value={numero}
+              value={numeroTel}
               onChange={({ target }) => setNumero(target.value)}
               type="tel"
               id="numero"
