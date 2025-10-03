@@ -9,9 +9,18 @@ export const ContainerCard = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `
 export const FormContato = styled.form`
   display: flex;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin-bottom: 10px;
+  }
 `
 export const ContatoNome = styled.input`
   font-size: 1.2em;
@@ -23,6 +32,10 @@ export const ContatoNome = styled.input`
 export const CardInfo = styled.div`
   font-size: 1em;
   display: flex;
+
+  @media (max-width: 768px) {
+    margin-bottom: 5px;
+  }
 `
 export const CardInfoNumber = styled(CardInfo)`
   width: 170px;
@@ -39,6 +52,10 @@ export const InfosText = styled.input`
   background-color: unset;
   border: none;
   outline: none;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const Buttons = styled.div`

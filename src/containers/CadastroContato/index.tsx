@@ -14,14 +14,18 @@ const CadastroContato = () => {
 
   const adicionarContato = (evento: FormEvent) => {
     evento.preventDefault()
-    dispatch(
-      adicionar({
-        nome,
-        email,
-        numeroTel
-      })
-    )
-    navigate('/')
+    if (nome || numeroTel) {
+      dispatch(
+        adicionar({
+          nome,
+          email,
+          numeroTel
+        })
+      )
+      navigate('/')
+    } else {
+      alert('Digite nome e numero')
+    }
   }
   return (
     <>

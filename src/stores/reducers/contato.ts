@@ -27,7 +27,7 @@ const contatoSlice = createSlice({
         }
         state.itens.push(novoContato)
       } else {
-        alert('Digite nome e numero  ')
+        alert('Digite nome e numero')
       }
     },
     editar: (state, action: PayloadAction<Contato>) => {

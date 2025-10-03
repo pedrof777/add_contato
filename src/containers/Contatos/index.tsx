@@ -7,20 +7,26 @@ const ListaContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contato)
   return (
     <>
-      <S.SectionContato>
-        <ul>
-          {itens.map((contato) => (
-            <li key={contato.nome}>
-              <CardContato
-                id={contato.id}
-                nome={contato.nome}
-                email={contato.email}
-                numeroTel={contato.numeroTel}
-              />
-            </li>
-          ))}
-        </ul>
-      </S.SectionContato>
+      {itens.length <= 0 ? (
+        <S.ContainerAviso>
+          <h4>Clique no + para adicionar um novo contato</h4>
+        </S.ContainerAviso>
+      ) : (
+        <S.SectionContato>
+          <ul>
+            {itens.map((contato) => (
+              <li key={contato.nome}>
+                <CardContato
+                  id={contato.id}
+                  nome={contato.nome}
+                  email={contato.email}
+                  numeroTel={contato.numeroTel}
+                />
+              </li>
+            ))}
+          </ul>
+        </S.SectionContato>
+      )}
     </>
   )
 }

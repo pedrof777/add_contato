@@ -35,79 +35,73 @@ const CardContato = ({
   }
   return (
     <>
-      {!estaEditando ? (
+      <S.ContainerCard>
         <div>
-          <h3>CLique no + para adicionar um novo contato</h3>
+          <S.ContatoNome
+            readOnly={!estaEditando}
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
+          <S.FormContato onSubmit={(e) => e.preventDefault} action="">
+            <S.CardInfoNumber>
+              <S.InfosTitle htmlFor="fone">Numero:</S.InfosTitle>
+              <S.InfosText
+                readOnly={!estaEditando}
+                id="fone"
+                type="tel"
+                maxLength={11}
+                placeholder="(xx) 9xxxx-xxxx"
+                value={numeroInput}
+                onChange={({ target }) => setNumber(target.value)}
+              />
+            </S.CardInfoNumber>
+            <S.CardInfo>
+              <S.InfosTitle htmlFor="email">Email:</S.InfosTitle>
+              <S.InfosText
+                readOnly={!estaEditando}
+                onChange={({ target }) => setMail(target.value)}
+                id="email"
+                type="email"
+                value={mail}
+              />
+            </S.CardInfo>
+          </S.FormContato>
         </div>
-      ) : (
-        <S.ContainerCard>
-          <div>
-            <S.ContatoNome
-              readOnly={!estaEditando}
-              type="text"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-            />
-            <S.FormContato action="">
-              <S.CardInfoNumber>
-                <S.InfosTitle htmlFor="fone">Numero:</S.InfosTitle>
-                <S.InfosText
-                  readOnly={!estaEditando}
-                  id="fone"
-                  type="tel"
-                  maxLength={11}
-                  placeholder="(xx) 9xxxx-xxxx"
-                  value={numeroInput}
-                  onChange={({ target }) => setNumber(target.value)}
-                />
-              </S.CardInfoNumber>
-              <S.CardInfo>
-                <S.InfosTitle htmlFor="email">Email:</S.InfosTitle>
-                <S.InfosText
-                  readOnly={!estaEditando}
-                  onChange={({ target }) => setMail(target.value)}
-                  id="email"
-                  type="email"
-                  value={mail}
-                />
-              </S.CardInfo>
-            </S.FormContato>
-          </div>
-          <S.Buttons>
-            {estaEditando ? (
-              <>
-                <S.ButtonEditarESalvar
-                  onClick={() => {
-                    dispatch(
-                      editar({
-                        nome: name,
-                        email: mail,
-                        numeroTel: numeroInput,
-                        id
-                      })
-                    )
-                    setEstaEditando(false)
-                  }}
-                >
-                  Salvar
-                </S.ButtonEditarESalvar>
-                <S.ButtonDeletarECancelar onClick={() => cancelar()}>
-                  Cancelar
-                </S.ButtonDeletarECancelar>
-              </>
-            ) : (
-              <>
-                <S.ButtonEditarESalvar onClick={() => setEstaEditando(true)}>
-                  Editar
-                </S.ButtonEditarESalvar>
-                <S.ButtonDeletarECancelar onClick={() => dispatch(remover(id))}>
-                  Deletar
-                </S.ButtonDeletarECancelar>
-              </>
-            )}
-          </S.Buttons>
-        </S.ContainerCard>
-      )}
+        <S.Buttons>
+          {estaEditando ? (
+            <>
+              <S.ButtonEditarESalvar
+                onClick={() => {
+                  dispatch(
+                    editar({
+                      nome: name,
+                      email: mail,
+                      numeroTel: numeroInput,
+                      id
+                    })
+                  )
+                  setEstaEditando(false)
+                }}
+              >
+                Salvar
+              </S.ButtonEditarESalvar>
+              <S.ButtonDeletarECancelar onClick={() => cancelar()}>
+                Cancelar
+              </S.ButtonDeletarECancelar>
+            </>
+          ) : (
+            <>
+              <S.ButtonEditarESalvar onClick={() => setEstaEditando(true)}>
+                Editar
+              </S.ButtonEditarESalvar>
+              <S.ButtonDeletarECancelar onClick={() => dispatch(remover(id))}>
+                Deletar
+              </S.ButtonDeletarECancelar>
+            </>
+          )}
+        </S.Buttons>
+      </S.ContainerCard>
     </>
   )
 }
