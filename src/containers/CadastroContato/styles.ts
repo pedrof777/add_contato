@@ -18,11 +18,11 @@ export const Back = styled(Link)`
 `
 
 export const Form = styled.form`
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 70%;
+  height: 100vh;
 `
 export const LabelInput = styled.div`
   display: flex;

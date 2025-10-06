@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export const ContainerHeader = styled.header`
   display: flex;
   justify-content: flex-end;
-  padding: 10px;
+  padding: 15px;
   align-items: center;
 `
 
